@@ -1,1 +1,21 @@
-<p>sign-in works!</p>
+<div class="logo_icon">
+  <img src="../../../assets/icon.svg" alt="Notetaker icon">
+  <h2>Welcome Back!</h2>
+</div>
+
+<div class="w-100 d-flex justify-content-center flex-column p-5">
+  <form [formGroup]="loginForm" class="mt-5">
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="user@email.com" formControlName="email" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="'password'" formControlName="password" required>
+    </mat-form-field>
+  </form>
+  <div class="mt-5">
+    <button class="w-100 btn-purple" mat-flat-button color="primary" (click)="login()">Login</button>
+  </div>
+</div>
+
