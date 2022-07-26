@@ -20,8 +20,11 @@ export class SignInComponent implements OnInit {
   }
 
   login(){
-    this.authService.login({email: this.loginForm.controls['email'].value, password:this.loginForm.controls['password'].value}).subscribe(res => {
-      AuthService.setToken(res);
+    this.authService.login({email: this.loginForm.controls['email'].value, password:this.loginForm.controls['password'].value}).subscribe({
+      next: (res) =>{
+        AuthService.setToken(res.data);
+      }
+
     });
   }
 

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { userDto } from '../models/userDto';
 import { environment } from 'src/environments/environment';
+import { ResponseBase } from '../models/response';
 
 @Injectable({
   providedIn: 'root'
@@ -21,11 +22,11 @@ export class AuthService {
     localStorage.setItem('token', token);
   }
 
-  public login(user : userDto) : Observable<string>{
-    return this.http.post<string>(this.apiUlr + "/login", user);
+  public login(user : userDto) : Observable<ResponseBase<string>>{
+    return this.http.post<ResponseBase<string>>(this.apiUlr + "/login", user);
   }
 
-  public register(user : userDto) : Observable<any>{
-    return this.http.post<any>(this.apiUlr, user);
+  public register(user : userDto) : Observable<ResponseBase<undefined>>{
+    return this.http.post<ResponseBase<undefined>>(this.apiUlr, user);
   }
 }

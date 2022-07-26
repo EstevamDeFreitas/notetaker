@@ -1,1 +1,30 @@
-<p>sign-up works!</p>
+<div class="logo_icon">
+  <img src="../../../assets/icon.svg" alt="Notetaker icon">
+  <h2>Welcome Back!</h2>
+</div>
+
+<div class="w-100 d-flex justify-content-center flex-column p-5">
+  <form [formGroup]="loginForm" class="mt-5">
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="user@email.com" formControlName="email" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="'password'" formControlName="password" minlength="8" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Repeat Password</mat-label>
+      <input matInput [type]="'password'" formControlName="repassword" minlength="8" required>
+      <mat-error *ngIf="loginForm.controls['password'].invalid">{{validatePassword()}}</mat-error>
+    </mat-form-field>
+  </form>
+  <div class="mt-5">
+    <button class="w-100 btn-purple" mat-flat-button color="primary" [disabled]="!loginForm.valid" (click)="createAccount()">Create Account</button>
+    <mat-error *ngIf="hasError">{{errorMessage}}</mat-error>
+    <div>
+      Already have an account? <a class="w-100 txt-secondary" routerLink="/">Log in</a>
+    </div>
+
+  </div>
+</div>
