@@ -15,6 +15,9 @@ export class SignInComponent implements OnInit {
     password : new FormControl('', [Validators.required, Validators.minLength(8)]),
   });
 
+  hasError = false;
+  errorMessage = "";
+
   constructor(private authService:AuthService, private router : Router) { }
 
   ngOnInit(): void {
@@ -25,6 +28,10 @@ export class SignInComponent implements OnInit {
       next: (res) =>{
         AuthService.setToken(res.data);
         this.router.navigate(['dashboard']);
+      },
+      error: (err) => {
+        this.hasError = true;
+        this.errorMessage = err.error.message;
       }
     });
   }
