@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard.component';
 
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {MatButtonModule} from '@angular/material/button';
     CommonModule,
     DashboardRoutingModule,
     MatSidenavModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class DashboardModule { }

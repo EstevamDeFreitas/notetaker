@@ -4,14 +4,14 @@
       <div>
         <img class="logo-img mb-5" src="../../assets/Logo.svg" alt="">
         <div class="mt-5">
-          <a class="w-100 link-primary" routerLink="./" mat-button>Dashboard</a>
-          <a class="w-100 link-primary" routerLink="./" mat-button>Notes</a>
-          <a class="w-100 link-primary" routerLink="./" mat-button>Projects</a>
+          <a class="w-100 link-primary" routerLink="./" mat-button [routerLinkActive]="'active'"><mat-icon class="material-symbols-rounded">home</mat-icon>Dashboard</a>
+          <a class="w-100 link-primary" routerLink="./projects" mat-button [routerLinkActive]="'active'"><mat-icon class="material-symbols-rounded">checklist</mat-icon>Projects</a>
+          <a class="w-100 link-primary" routerLink="./notes" mat-button [routerLinkActive]="'active'"><mat-icon class="material-symbols-rounded">note</mat-icon>Notes</a>
         </div>
       </div>
 
       <div>
-        <a class="w-100 link-primary" routerLink="/" mat-button>Log out</a>
+        <a class="w-100 link-primary" routerLink="/" mat-button><mat-icon class="material-symbols-rounded">logout</mat-icon>Log out</a>
       </div>
     </div>
   </mat-drawer>
