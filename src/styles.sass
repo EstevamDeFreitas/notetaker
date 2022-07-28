@@ -1,6 +1,7 @@
 $textcolor : #383838
 $primary_color : #7A57D1
 $secondary_color : #4FC1E9
+$background_color : #D6D6D6
 
 .logo_icon
   text-align: center
@@ -19,6 +20,16 @@ $secondary_color : #4FC1E9
   &-blue
     background-color: $secondary_color !important
 
+.link
+  &-primary
+    color: $textcolor !important
+    display: flex !important
+
+
+
+    &:hover
+      color: $primary_color !important
+
 .txt
   color: $textcolor
 
@@ -28,3 +39,8 @@ $secondary_color : #4FC1E9
   &-secondary
     color: $secondary_color
 
+.bg
+  background:$background_color
+
+.pd-nav
+  padding: 2rem

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class SignInComponent implements OnInit {
     password : new FormControl('', [Validators.required, Validators.minLength(8)]),
   });
 
-  constructor(private authService:AuthService) { }
+  constructor(private authService:AuthService, private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -23,8 +24,8 @@ export class SignInComponent implements OnInit {
     this.authService.login({email: this.loginForm.controls['email'].value, password:this.loginForm.controls['password'].value}).subscribe({
       next: (res) =>{
         AuthService.setToken(res.data);
+        this.router.navigate(['dashboard']);
       }
-
     });
   }
 

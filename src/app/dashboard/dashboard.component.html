@@ -1,0 +1,21 @@
+<mat-drawer-container class="h-100 w-100">
+  <mat-drawer mode="side" opened class="pd-nav">
+    <div class="nav-bar-flex h-100">
+      <div>
+        <img class="logo-img mb-5" src="../../assets/Logo.svg" alt="">
+        <div class="mt-5">
+          <a class="w-100 link-primary" routerLink="./" mat-button>Dashboard</a>
+          <a class="w-100 link-primary" routerLink="./" mat-button>Notes</a>
+          <a class="w-100 link-primary" routerLink="./" mat-button>Projects</a>
+        </div>
+      </div>
+
+      <div>
+        <a class="w-100 link-primary" routerLink="/" mat-button>Log out</a>
+      </div>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content class="bg pd-nav">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
