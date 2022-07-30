@@ -10,6 +10,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { NotesComponent } from './components/notes/notes.component';
 import { DashComponent } from './components/dash/dash.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { TopToolbarComponent } from './components/top-toolbar/top-toolbar.component';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -17,14 +19,16 @@ import { ProjectsComponent } from './components/projects/projects.component';
     DashboardComponent,
     NotesComponent,
     DashComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    TopToolbarComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     MatSidenavModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
   ]
 })
 export class DashboardModule { }
