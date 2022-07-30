@@ -1,0 +1,9 @@
+<mat-card class="note">
+  <ng-container *ngIf="note != undefined">
+    <mat-card-title>{{note.title}}</mat-card-title>
+    <mat-card-content>
+      <div [innerText]="note.description"></div>
+    </mat-card-content>
+  </ng-container>
+
+</mat-card>

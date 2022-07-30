@@ -5,6 +5,13 @@ $primary_color : #7A57D1
 $secondary_color : #4FC1E9
 $background_color : #f1f1f1
 
+::-webkit-scrollbar
+  width: 5px
+
+::-webkit-scrollbar-thumb
+  background: gray
+  border-radius: 1rem
+
 .logo_icon
   text-align: center
 
@@ -33,6 +40,9 @@ $background_color : #f1f1f1
     &:hover
       color: $primary_color !important
 
+.pd-btn
+  padding: 0.5rem 1rem !important
+
 .txt
   color: $textcolor
 
@@ -47,3 +57,17 @@ $background_color : #f1f1f1
 
 .pd-nav
   padding: 2rem
+
+h1, h2, h3, h4, h5, h6
+  margin: 0
+
+.note
+  height: 20rem
+  width: 18rem
+
+  mat-card-content
+    max-height: 85%
+    overflow: auto
+    text-align: justify
+
+

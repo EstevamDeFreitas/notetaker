@@ -12,6 +12,7 @@ import { DashComponent } from './components/dash/dash.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { TopToolbarComponent } from './components/top-toolbar/top-toolbar.component';
 import {MatCardModule} from '@angular/material/card';
+import { NoteComponent } from './components/shared/note/note.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {MatCardModule} from '@angular/material/card';
     NotesComponent,
     DashComponent,
     ProjectsComponent,
-    TopToolbarComponent
+    TopToolbarComponent,
+    NoteComponent
   ],
   imports: [
     CommonModule,

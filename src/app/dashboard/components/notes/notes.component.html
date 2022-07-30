@@ -1,1 +1,9 @@
-<p>notes works!</p>
+<header class="d-flex justify-content-between pb-4">
+  <h3>Notes</h3>
+  <button class="btn-purple pd-btn" mat-flat-button color="primary"><h4>Create a note</h4></button>
+</header>
+<div>
+    <ng-container *ngFor="let note of notes">
+      <note [note]="note"></note>
+    </ng-container>
+</div>
