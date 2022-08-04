@@ -1,9 +1,32 @@
 <mat-card class="note">
   <ng-container *ngIf="note != undefined">
-    <mat-card-title>{{note.title}}</mat-card-title>
-    <mat-card-content>
-      <div [innerText]="note.description"></div>
-    </mat-card-content>
+    <form [formGroup]="noteForms">
+      <mat-card-title (dblclick)="activateTitleInput()">
+        <ng-container *ngIf="!titleInputActive">
+          <div>{{note.title}}</div>
+        </ng-container>
+        <ng-container *ngIf="titleInputActive">
+          <textarea type="text" name="title" id="title" formControlName="title"></textarea>
+        </ng-container>
+      </mat-card-title>
+      <mat-card-content (dblclick)="activateDescriptionInput()">
+        <ng-container *ngIf="descriptionInputActive">
+          <textarea class="description"  type="text" name="title" id="title" formControlName="description"></textarea>
+        </ng-container>
+        <ng-container *ngIf="!descriptionInputActive">
+          <div *ngIf="!isDescriptionEmpty()" class="description" [innerText]="note.description"></div>
+          <ng-container *ngIf="isDescriptionEmpty()">
+            <div class="empty">Add a description...</div>
+          </ng-container>
+        </ng-container>
+      </mat-card-content>
+    </form>
+  </ng-container>
+  <ng-container *ngIf="titleInputActive || descriptionInputActive">
+    <mat-card-actions align="end" >
+      <button mat-button (click)="disableInputs()">Cancel</button>
+      <button class="btn-purple" mat-flat-button color="primary" (click)="editNote()">Edit</button>
+    </mat-card-actions>
   </ng-container>
 
 </mat-card>

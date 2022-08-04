@@ -17,4 +17,8 @@ export class NoteService {
   public getNotes() : Observable<ResponseBase<Array<Note>>>{
     return this.http.get<ResponseBase<Array<Note>>>(`${this.url}`)
   }
+
+  public editNote(note : Note) : Observable<ResponseBase<any>>{
+    return this.http.put<ResponseBase<any>>(`${this.url}`,note);
+  }
 }

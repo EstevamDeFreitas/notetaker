@@ -17,7 +17,7 @@ export class NotesComponent implements OnInit {
     this.getNotes();
   }
 
-   private getNotes(){
+   public getNotes(){
     this.noteService.getNotes().subscribe({
       next: (res)=>{
         this.notes = res.data;
